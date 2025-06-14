@@ -1,4 +1,4 @@
-name: Build TVHGuide Modern
+name: Build TVHGuideNG Modern
 
 on:
   push:
@@ -46,13 +46,13 @@ jobs:
     - name: Upload Debug APK
       uses: actions/upload-artifact@v4
       with:
-        name: TVHGuide-Modern-Debug
+        name: TVHGuideNG-Modern-Debug
         path: app/build/outputs/apk/debug/app-debug.apk
         
     - name: Upload Release APK
       uses: actions/upload-artifact@v4
       with:
-        name: TVHGuide-Modern-Release
+        name: TVHGuideNG-Modern-Release
         path: app/build/outputs/apk/release/app-release-unsigned.apk
         
     - name: Create Release
@@ -60,11 +60,12 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         tag_name: v2.0.0-modern-${{ github.run_number }}
-        name: TVHGuide Modern v2.0.0-${{ github.run_number }}
+        name: TVHGuideNG Modern v2.0.0-${{ github.run_number }}
         body: |
-          🎉 Modernized TVHGuide with ExoPlayer video support!
+          🎉 TVHGuideNG Modernized with ExoPlayer!
           
-          **New Features:**
+          **What's New:**
+          - ✅ Converted from Eclipse/Ant to modern Gradle
           - ✅ In-app video playback with ExoPlayer
           - ✅ Modern Android support (API 34)
           - ✅ Material Design components
